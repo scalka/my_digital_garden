@@ -1,27 +1,16 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
+import Layout, { siteTitle } from '../components/layouts/layout';
+import utilStyles from '../styles/utils/utils.module.scss';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Layout home>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Recipe for a <Link href="/recipes/salad">salad</Link>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}></div>
-      </main>
-    </div>
+      <section className={utilStyles.headingMd}>
+        <p>This will be a super cool weekly recipe generator</p>
+      </section>
+    </Layout>
   );
 }
