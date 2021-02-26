@@ -1,20 +1,10 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layouts/layout';
+import Link from 'next/link';
 import utilStyles from '../styles/utils/utils.module.scss';
 import { getSortedPostsData } from '../lib/posts';
 
-//To use Server-side Rendering, you need to export getServerSideProps(context) instead of getStaticProps from your page.
-export async function getStaticProps() {
-  // Get external data from the file system, API, DB, etc.
-  const allPostsData = getSortedPostsData();
-  // The value of the `props` key will be
-  //  passed to the `Home` component
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+import Layout, { siteTitle } from '../components/layouts/layout';
+import Date from '../components/atoms/date';
 
 export default function Home({ allPostsData }) {
   return (
@@ -30,15 +20,30 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                {date && <Date dateString={date} />}
+              </small>
             </li>
           ))}
         </ul>
       </section>
     </Layout>
   );
+}
+
+//To use Server-side Rendering, you need to export getServerSideProps(context) instead of getStaticProps from your page.
+export async function getStaticProps() {
+  // Get external data from the file system, API, DB, etc.
+  const allPostsData = getSortedPostsData();
+  // The value of the `props` key will be
+  //  passed to the `Home` component
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }
