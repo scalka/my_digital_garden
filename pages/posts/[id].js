@@ -1,7 +1,7 @@
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
 import Layout from '../../components/layouts/layout';
-import Date from '../../components/atoms/date';
+import Date from '../../components/atoms/Date';
 
 import utilStyles from '../../styles/utils/utils.module.scss';
 

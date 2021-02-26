@@ -4,7 +4,7 @@ import utilStyles from '../styles/utils/utils.module.scss';
 import { getSortedPostsData } from '../lib/posts';
 
 import Layout, { siteTitle } from '../components/layouts/layout';
-import Date from '../components/atoms/date';
+import Date from '../components/atoms/Date';
 
 export default function Home({ allPostsData }) {
   return (
