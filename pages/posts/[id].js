@@ -1,13 +1,13 @@
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import Layout from '../../components/layouts/layout';
+import PostLayout from '../../components/layouts/PostLayout';
 import Date from '../../components/atoms/Date';
 
-import utilStyles from '../../styles/utils/utils.module.scss';
+import utilStyles from '../../styles/utils.module.scss';
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <PostLayout>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -18,7 +18,7 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
-    </Layout>
+    </PostLayout>
   );
 }
 

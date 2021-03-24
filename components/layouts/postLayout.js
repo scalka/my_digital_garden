@@ -1,13 +1,12 @@
 import Head from 'next/head';
-import styles from './layout.module.scss';
+import styles from './postLayout.module.scss';
 import utilStyles from '../../styles/utils.module.scss';
 import Link from 'next/link';
 import cn from 'classnames';
 
-const name = 'Salad';
 export const siteTitle = 'Weekly recipe generator';
 
-export default function Layout({ children, theme = 'light' }) {
+export default function PostLayout({ children, theme = 'light' }) {
   return (
     <div
       className={cn({
@@ -28,17 +27,12 @@ export default function Layout({ children, theme = 'light' }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        <>
-          <img
-            src="/images/profile.jpg"
-            className={`${styles.headerHomeImage}`}
-            alt={name}
-          />
-          <h1>{name}</h1>
-        </>
-      </header>
       <main>{children}</main>
+      <div className={styles.backToHome}>
+        <Link href="/">
+          <a>← Back to home</a>
+        </Link>
+      </div>
     </div>
   );
 }

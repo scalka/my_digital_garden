@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import utilStyles from '../styles/utils/utils.module.scss';
+import utilStyles from '../styles/utils.module.scss';
 import { getSortedPostsData } from '../lib/posts';
 
 import Layout, { siteTitle } from '../components/layouts/layout';
@@ -8,7 +8,7 @@ import Date from '../components/atoms/Date';
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>

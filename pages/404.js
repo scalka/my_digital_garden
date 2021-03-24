@@ -1,4 +1,3 @@
-import Layout from '../components/layouts/layout';
 import Head from 'next/head';
 
 export default function NotFoundPage({ postData }) {
