@@ -1,7 +1,6 @@
 ---
-title: 'Pre rendering Healthy salad'
+title: 'Hidden file'
 date: '2020-01-01'
-status: 'published'
 ---
 
 You might have noticed that each markdown file has a metadata section at the top containing title and date. This is called YAML Front Matter, which can be parsed using a library called gray-matter.
