@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import styles from './homeLayout.module.scss';
-import utilStyles from '../../styles/utils.module.scss';
 import cn from 'classnames';
 import MainMenu from '../molecules/Menus/Main';
 
@@ -10,8 +9,7 @@ export default function HomeLayout({ children, theme = 'light' }) {
   return (
     <div
       className={cn({
-        container: true,
-        [styles.container]: true,
+        [styles.home]: true,
         [styles.dark]: theme === 'dark',
         [styles.light]: theme === 'light',
       })}
@@ -32,7 +30,7 @@ export default function HomeLayout({ children, theme = 'light' }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <MainMenu />
-      {children}
+      <main className={styles.sections}>{children}</main>
     </div>
   );
 }

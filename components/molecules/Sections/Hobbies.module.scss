@@ -1,0 +1,41 @@
+@import '../../../styles/variables';
+
+.hobbies {
+  max-width: 250px;
+  margin: 50px 0 auto auto;
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &_header {
+    margin: 0;
+    padding: 0;
+    border-bottom: 4px solid $font-color;
+  }
+  &_list {
+    counter-reset: hobbies;
+    background: #ffd53e;
+    margin: 0 0 0 36px;
+    padding: 0 10px 0 12px;
+  }
+  &_item {
+    counter-increment: hobbies;
+    position: relative;
+  }
+  &_title::before {
+    font-weight: 700;
+    font-size: 1.2rem;
+    content: counter(hobbies) '.';
+    left: -36px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+  }
+  &_title {
+    margin-top: 0;
+    position: relative;
+  }
+  &_img_medium {
+    max-width: 250px;
+  }
+}

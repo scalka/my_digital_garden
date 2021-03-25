@@ -1,0 +1,35 @@
+.home {
+  margin: auto;
+  width: 85vw;
+  max-width: 1024px;
+}
+.sections {
+  display: grid;
+  grid-template-rows: 90vh 100vh auto auto auto 20em;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    'front front front front front front'
+    'about about about about about-hobbies about-hobbies'
+    'experience experience experience education education education'
+    'portfolio portfolio portfolio portfolio portfolio portfolio'
+    'skills skills skills skills skills skills'
+    'footer footer footer footer footer footer';
+  grid-gap: 2em;
+
+  @media (max-width: 767px) {
+    & {
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'front front'
+        'about about'
+        'about-hobbies about-hobbies'
+        'experience experience'
+        'education education'
+        'portfolio portfolio'
+        'skills skills'
+        'footer footer';
+      grid-gap: 1em;
+    }
+  }
+}

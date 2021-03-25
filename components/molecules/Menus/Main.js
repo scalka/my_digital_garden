@@ -1,12 +1,12 @@
 import Link from 'next/link';
-
+import styles from './Main.module.scss';
 export default function MainMenu() {
   return (
-    <>
-      <div className="logo">
-        <a className="logo-text" href="#front-section">
+    <header className={styles.menu}>
+      <div className={styles.logo}>
+        <a href="#front-section">
           <img
-            className="logo-img"
+            className={styles.logo__img}
             src="images/myLogo2.svg"
             alt="Sylwia's logo"
           />
@@ -34,6 +34,6 @@ export default function MainMenu() {
           </li>
         </ul>
       </nav>
-    </>
+    </header>
   );
 }

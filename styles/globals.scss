@@ -79,6 +79,7 @@ hr {
 ul,
 ol {
   list-style: none;
+  padding: 0;
 }
 .img_medium {
   max-width: 350px;
@@ -121,36 +122,6 @@ mark.highlighted:after {
 body {
   background-color: $background-color;
 }
-.container {
-  display: grid;
-  width: 964px;
-  margin: auto;
-  grid-template-rows: 10em 90vh 100vh auto auto auto 20em;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-areas:
-    'headerl headerl . nav nav nav'
-    'front front front front front front'
-    'about about about about about-hobbies about-hobbies'
-    'experience experience experience education education education'
-    'portfolio portfolio portfolio portfolio portfolio portfolio'
-    'skills skills skills skills skills skills'
-    'footer footer footer footer footer footer';
-  grid-gap: 2em;
-}
-
-/* Header */
-header {
-  grid-area: headerl;
-}
-nav {
-  grid-area: nav;
-}
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.1em;
-  font-family: $font-decor;
-}
 
 a {
   outline: none;
@@ -172,17 +143,7 @@ a:active {
   font-weight: 600;
   border-bottom: 1px solid;
 }
-.logo {
-  margin-top: 1em;
-}
-.logo-text {
-  font-size: 1.1em;
-  font-family: $font-decor;
-}
-.logo-img {
-  height: 2.1em;
-  display: block;
-}
+
 /* Front-section */
 #front-section {
   grid-area: front;
@@ -205,41 +166,7 @@ a:active {
   align-items: flex-start;
   justify-content: flex-end;
 }
-.hobbies_container {
-  max-width: 250px;
-  margin: 50px 0 auto auto;
-}
-.hobbies_header {
-  margin: 0;
-  padding: 0;
-  border-bottom: 4px solid $font-color;
-}
-.hobbies_list {
-  counter-reset: hobbies;
-  background: #ffd53e;
-  margin: 0 0 0 36px;
-  padding: 0 10px 0 12px;
-}
-.hobbies_item {
-  counter-increment: hobbies;
-  position: relative;
-}
-.hobbies_title::before {
-  font-weight: 700;
-  font-size: 1.2rem;
-  content: counter(hobbies) '.';
-  left: -36px;
-  position: absolute;
-  text-align: center;
-  top: 0;
-}
-.hobbies_title {
-  margin-top: 0;
-  position: relative;
-}
-.hobbies_img_medium {
-  max-width: 250px;
-}
+
 /* Experience Section */
 #experience-section {
   grid-area: experience;
@@ -408,53 +335,4 @@ address {
 .links-list-item i {
   padding: 8px 0 8px 0;
   margin-right: 8px;
-}
-
-@media (max-width: 1023px) and (min-width: 768px) {
-  main {
-    width: 724px;
-  }
-  .hobbies_container {
-    max-width: 200px;
-  }
-  .hobbies_img_medium {
-    max-width: 200px;
-  }
-}
-@media (max-width: 767px) {
-  main {
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
-    width: 85vw;
-    grid-template-areas:
-      'nav headerl'
-      'front front'
-      'about about'
-      'about-hobbies about-hobbies'
-      'experience experience'
-      'education education'
-      'portfolio portfolio'
-      'skills skills'
-      'footer footer';
-    grid-gap: 1em;
-  }
-  nav ul {
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    margin-right: 0;
-    margin-left: auto;
-  }
-  #front-section,
-  #about-section {
-    flex-wrap: wrap;
-  }
-  .project-item {
-    width: auto;
-  }
-  #hobbies-section {
-    display: none;
-  }
 }

@@ -1,0 +1,33 @@
+@import '../../../styles/variables';
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 767px) {
+    & {
+      flex-direction: row-reverse;
+    }
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    font-family: $font-decor;
+    gap: 12px;
+    @media (max-width: 767px) {
+      & {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .logo {
+    margin-top: 1em;
+  }
+
+  .logo__img {
+    height: 2.1em;
+    display: block;
+  }
+}
