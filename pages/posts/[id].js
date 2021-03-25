@@ -1,6 +1,6 @@
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Head from 'next/head';
-import PostLayout from '../../components/layouts/PostLayout';
+import PostLayout from '../../components/layouts/postLayout';
 import Date from '../../components/atoms/Date';
 
 import utilStyles from '../../styles/utils.module.scss';
