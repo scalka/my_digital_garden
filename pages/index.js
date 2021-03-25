@@ -3,17 +3,17 @@ import Link from 'next/link';
 import utilStyles from '../styles/utils.module.scss';
 import { getSortedPostsData } from '../lib/posts';
 
-import Layout, { siteTitle } from '../components/layouts/layout';
+import HomeLayout, { siteTitle } from '../components/layouts/homeLayout';
 import Date from '../components/atoms/Date';
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout>
+    <HomeLayout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>This will be a super cool weekly recipe generator</p>
+        <p>This is my digital garden</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -31,7 +31,7 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </HomeLayout>
   );
 }
 
