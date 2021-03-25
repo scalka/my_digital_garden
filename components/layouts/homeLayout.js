@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import styles from './homeLayout.module.scss';
 import utilStyles from '../../styles/utils.module.scss';
-
 import cn from 'classnames';
+import MainMenu from '../molecules/Menus/Main';
 
 export const siteTitle = "Sylwia's digital garden";
 
@@ -10,6 +10,7 @@ export default function HomeLayout({ children, theme = 'light' }) {
   return (
     <div
       className={cn({
+        container: true,
         [styles.container]: true,
         [styles.dark]: theme === 'dark',
         [styles.light]: theme === 'light',
@@ -17,7 +18,10 @@ export default function HomeLayout({ children, theme = 'light' }) {
     >
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Recipe for a fantastic salas" />
+        <meta
+          name="description"
+          content="Sylwia's Calka portfolio and digital garden"
+        />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
@@ -27,18 +31,8 @@ export default function HomeLayout({ children, theme = 'light' }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
-        <div class="logo">
-          <a class="logo-text" href="#front-section">
-            <img
-              class="logo-img"
-              src="images/myLogo2.svg"
-              alt="Sylwia's logo"
-            />
-          </a>
-        </div>
-      </header>
-      <main>{children}</main>
+      <MainMenu />
+      {children}
     </div>
   );
 }
