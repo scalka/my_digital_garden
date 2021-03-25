@@ -1,6 +1,5 @@
 import Head from 'next/head';
-import styles from './PostLayout.module.scss';
-import utilStyles from '../../styles/utils.module.scss';
+import styles from './postLayout.module.scss';
 import Link from 'next/link';
 import cn from 'classnames';
 
