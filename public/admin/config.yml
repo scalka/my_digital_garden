@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: scalka/my_zettelkasten
   branch: master
 media_folder: public/images
 public_folder: public
